@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Information</title>
+    <link href="/home/fahimhaidari/Desktop/shakar/Netlif file/styles.css" rel="stylesheet" type="text/css">
+    
+</head>
+<body>
+    
+    <div class="weather-card">
+        <div class="weather">
+       <input type="text" id="cityInput" placeholder="Enter city name">
+            <button id="fetchButton" onclick="fetchWeather()">Scerach</button>
+        </div>
+        <div class="weather-title">Sydney, NSW, Australia</div>
+        <div class="weather-details">
+            <p>Wednesday 22:00</p>
+            <div class="all-icon">
+     <div class="weather-icon">
+                <p>Cloudy</p>
+                <img class="img-1" src="partly-cloudy.png" alt="Cloudy Icon">
+                <span class="font">19</span>
+                <span class="units">
+                    °C |
+                    <a href="#"> °F</a>
+                </span></div>
+            <div class="list">
+                <ul class="ul-class">
+                    <li>Precipitation: 0%</li>
+                    <li>Humidity: 77%</li>
+                    <li>Wind: 8 km/h</li>
+                     </ul>
+                </div>    
+                </div>   
+        </div>
+    </div>
+    <script src="/home/fahimhaidari/Desktop/shakar/Netlif file/index.js">
+        // Function to display weather information
+function displayWeather(city) {
+  // Check if the city exists in the weather data object
+  if (weatherData[city]) {
+    const temperature = weatherData[city].temperature;
+    const humidity = weatherData[city].humidity;
+    alert(`It is currently ${temperature} in ${city} with a humidity of ${humidity}`);
+  } else {
+    alert(`Sorry, we don't know the weather for this city, try going to https://www.google.com/search?q=weather+${city}`);
+  }
+}
+
+// Prompt the user to enter a city when the page loads
+window.onload = function() {
+  const city = prompt("Enter a city:");
+  displayWeather(city);
+};
+  
+    </script>
+</body>
+</html>
